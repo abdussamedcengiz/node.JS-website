@@ -1,5 +1,11 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.2.0"
-  }
+  "name": "nodejs-website",
+  "version": "1.0.0",
+  "description": "Framework kullanmadan, saf Node.js http modulu ile yazilmis blog sitesi",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Abdussamed Cengiz",
+  "license": "MIT"
 }

@@ -1,12 +1,10 @@
 const http = require("http");
-const routes = require("./routes");
 const routeHandler = require("./routes");
-function requestListener(request, response) {
-  response.end();
-}
 
-var server = http.createServer(routes);
-server.listen(5000);
-//http://127.0.0.1:5000/
+const PORT = process.env.PORT || 5000;
 
-console.log("node.js server at port 4000");
+const server = http.createServer(routeHandler);
+
+server.listen(PORT, function () {
+  console.log(`http://localhost:${PORT} adresinde calisiyor`);
+});
