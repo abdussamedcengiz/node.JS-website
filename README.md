@@ -21,21 +21,22 @@ yonlendirme (redirect) adim adim yaziliyor.
 | `/` | `index.html` |
 | `/blogs` | `blogs.html` |
 | `/create` (POST) | Yaziyi `blogs.txt`'ye ekler, `/` adresine yonlendirir |
-| digerleri | `404.html` |
+| digerleri | `404.html` (404 durum koduyla) |
 
 ## Calistirma
 
 ```bash
 npm install
-node app.js
+npm start
 ```
 
 Sunucu **5000** portunda calisiyor: http://localhost:5000
 
-## Bilinen sorunlar
+## Sinirlar
 
-- `app.js` ekrana "node.js server at port 4000" yaziyor ama sunucu 5000
-  portunu dinliyor.
-- `app.js` icinde kullanilmayan bir `requestListener` fonksiyonu ve ayni
-  modulu iki kez iceri alan (`routes`, `routeHandler`) satirlar duruyor.
-- `node_modules` klasoru depoya commit'lenmis.
+- Yazilar veritabani yerine `blogs.txt` dosyasina ekleniyor; ayni anda iki
+  istek gelirse dosyaya yazma sirasi garanti degil.
+- Yazi icerigi govdeden `split("=")[1]` ile aliniyor; iceriginde `=` gecen
+  bir yazi dogru ayristirilamaz.
+- Sayfa sunumu disinda hicbir sey yok: duzenleme, silme, kimlik dogrulama
+  bu deponun kapsaminda degil.

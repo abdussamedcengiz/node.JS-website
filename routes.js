@@ -57,7 +57,9 @@ const routeHandler=(request,response)=>{
    
     else{
      fs.readFile("404.html",(eror,html)=>{
-       response.writeHead(200,{"Content-Type":"text/html"});
+       // Sayfa bulunamadi: govde 404.html olsa da durum kodu 200 donuyordu,
+       // bu yuzden tarayicilar ve arama motorlari sayfayi gecerli saniyordu.
+       response.writeHead(404,{"Content-Type":"text/html"});
        response.write(html); 
        response.end();
        
